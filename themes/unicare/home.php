@@ -396,4 +396,9 @@ Template Name: home
     </section>
     <!-- /.who -->
 
+    <!-- Back to top button -->
+    <a id="button">
+        <img src="<?php bloginfo('template_url'); ?>/assets/img/up-arrow.svg" alt="Icon">
+    </a>
+
 <?php get_footer();?>
