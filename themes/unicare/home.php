@@ -61,49 +61,34 @@ Template Name: home
     <div class="container">
         <div class="news-border">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="news-card">
-                        <span class="news-card__cat">News Release</span>
-                        <!-- /.news-card__cat -->
-                        <div class="news-card__title">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Explicabo laboriosam mollitia id at veritatis voluptatum quae delectus, quia ducimus ab
-                            et sed distinctio vel optio quas nesciunt officiis quam laudantium!</div>
-                        <!-- /.news-card__title -->
-                        <small class="news-card__date">26 December, 2021</small>
-                        <!-- /.news-card__date -->
-                    </div>
-                    <!-- /.news-card -->
-                </div>
-                <!-- /.col-md-4 -->
-                <div class="col-md-4">
-                    <div class="news-card">
-                        <span class="news-card__cat">Hot news</span>
-                        <!-- /.news-card__cat -->
-                        <div class="news-card__title">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                            Porro eveniet sapiente placeat aliquid hic neque cum similique vel earum, ipsa in animi
-                            ducimus itaque laborum ratione ab iure tempora dolores.</div>
-                        <!-- /.news-card__title -->
-                        <small class="news-card__date">24 December, 2021</small>
-                        <!-- /.news-card__date -->
-                    </div>
-                    <!-- /.news-card -->
-                </div>
-                <!-- /.col-md-4 -->
-                <div class="col-md-4">
-                    <div class="news-card">
-                        <span class="news-card__cat">Latest release</span>
-                        <!-- /.news-card__cat -->
-                        <div class="news-card__title">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tenetur assumenda ex minima, maxime expedita voluptatibus cupiditate repudiandae, amet
-                            iure totam possimus eligendi quos libero quisquam unde. Ea harum necessitatibus fuga.
+                <?php
+                $myposts = get_posts(array(
+                    'post_type' => 'post',
+                    'orderby'      => 'date',
+                    'order'    => 'DESC'
+                ));
+
+                if ($myposts) {
+                    foreach ($myposts as $post) {
+                        setup_postdata($post);
+                ?>
+                        <div class="col-md-4">
+                            <div class="news-card">
+                                <span class="news-card__cat"><?php the_category(); ?></span>
+                                <!-- /.news-card__cat -->
+                                <div class="news-card__title"><?php the_title(); ?></div>
+                                <!-- /.news-card__title -->
+                                <small class="news-card__date"><?= get_the_date(); ?></small>
+                                <!-- /.news-card__date -->
+                            </div>
+                            <!-- /.news-card -->
                         </div>
-                        <!-- /.news-card__title -->
-                        <small class="news-card__date">28 December, 2021</small>
-                        <!-- /.news-card__date -->
-                    </div>
-                    <!-- /.news-card -->
-                </div>
-                <!-- /.col-md-4 -->
+                <?php
+                    }
+                }
+                wp_reset_postdata(); // Сбрасываем $post
+                ?>
+
             </div>
             <!-- /.row -->
         </div>

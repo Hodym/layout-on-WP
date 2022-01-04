@@ -252,10 +252,27 @@ img.select-arrow {
 }
 
 .news-card .news-card__cat {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.news-card .news-card__cat ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.news-card .news-card__cat ul li a {
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     color: #191919;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+
+.news-card .news-card__cat ul li a:hover {
+    color: #FFCC5F;
 }
 
 .news-card .news-card__title {
