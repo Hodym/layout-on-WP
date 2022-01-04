@@ -277,7 +277,7 @@ Template Name: home
             <!-- /.col-md-6 -->
             <div class="col-md-5 offset-md-1">
                 <div class="research-content">
-                    <h2 class="title">Research <br><span>&</span> Development</h2>
+                    <h2 class="title">Research&nbsp;<br><span>&&nbsp;</span>Development</h2>
                     <!-- /.title -->
                     <p>UniCare Japan conducts research that contributes
                         to the sustainable development of society and enriches the lives

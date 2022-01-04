@@ -1482,9 +1482,82 @@ padding: 120px 0 200px 0;
     color: #191919;
 }
 
-.global-map {
-    margin-bottom: 200px;
+.global .global-map {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 70px;
 }
+
+.global .global-map .marker {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    padding: 0 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background-color: #191919;
+    color: #FFFFFF;
+}
+
+.global .global-map .marker::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #191919;
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: -5px;
+    z-index: 1;
+}
+
+.global #jp {
+    position: absolute;
+    top: 48%;
+    right: 18%;
+}
+
+.global #usa {
+    position: absolute;
+    top: 43%;
+    left: 24%;
+}
+
+.global .map-place.japan {
+    display: none;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+
+.global .map-place.japan.active {
+    display: block;
+    opacity: 1;
+}
+
+.global .map-place.USA {
+    display: none;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+
+.global .map-place.USA.active {
+    display: block;
+    opacity: 1;
+}
+
+.global .map-place__title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 
 .global .map-place__title h4 {
     margin: 0;
@@ -1512,7 +1585,7 @@ padding: 120px 0 200px 0;
     width: 200px;
     max-width: 100%;
     height: 60px;
-    margin: 50px auto 0;
+    margin-top: 50px;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
@@ -1580,6 +1653,14 @@ padding: 120px 0 200px 0;
 
 .global .map-place__info ul:last-child li:nth-of-type(2) a {
     color: #FFCC5F;
+}
+
+.global-map path {
+    fill: lightgray;
+    stroke: white;
+}
+.global-map path:hover {
+    fill: #FFCC5F;
 }
 
 /* Single post CSS */
@@ -2409,9 +2490,9 @@ padding: 120px 0 200px 0;
     }
 	
 	/* Global */
-	.global .global-map {
+	/* .global .global-map {
 		display: none;
-	}
+	} */
 	
 	.global {
     	padding: 60px 0 60px 0;
