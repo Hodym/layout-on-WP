@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="footer-logo">
-                            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" alt="Logo"></a>
+                            <?php the_custom_logo(); ?>
                         </div>
                         <!-- /.footer-logo -->
                         <div class="footer-address">
@@ -22,20 +22,18 @@
                     </div>
                     <!-- /.col-md-3 -->
                     <div class="col-md-2 offset-md-4">
-                        <div class="footer-nav">
+
+                        <div class="d-none d-md-block d-lg-block d-xl-block col-md-6">
                             <small>Quick Links</small>
-                            <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Our Brands</a></li>
-                                <li><a href="#">Research</a></li>
-                                <li><a href="#">Cases</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Services</a></li>
-                            </ul>
+                            <?php wp_nav_menu([
+                                'theme_location'  => 'bottom_menu',
+                                'container'       => 'nav',
+                                'container_class'      => 'footer-nav'
+                            ]); ?>
+                            <!-- /.footer-nav -->
                         </div>
                         <!-- /.footer-nav -->
+
                     </div>
                     <!-- /.col-md-2 offset-md-4 -->
                     <div class="col-md-2 offset-md-1">

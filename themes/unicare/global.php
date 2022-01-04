@@ -223,7 +223,7 @@ Template Name: global
         <!-- /.global-map -->
 
 
-        <div class="map-place japan" id="japan">
+        <div class="map-place japan active" id="japan">
             <div class="row">
                 <div class="col-md-6">
                     <div class="map-place__title">
@@ -321,7 +321,7 @@ Template Name: global
 <script>
     var countryElements = document.getElementById('countries').childNodes;
     var countryCount = countryElements.length;
-
+    
     for (var i = 0; i < countryCount; i++) {
         countryElements[i].onclick = function() {
             // if (this.getAttribute('data-name') == 'Japan') {

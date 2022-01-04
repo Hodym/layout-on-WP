@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-6 col-md-2">
                     <div class="header-logo">
-                        <a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" alt="Logo"></a>
+                        <?php the_custom_logo(); ?>
                     </div>
                     <!-- /.header-logo -->
                 </div>
@@ -28,7 +28,7 @@
                     <?php wp_nav_menu([
                         'theme_location'  => 'top_menu',
                         'container'       => 'nav',
-                        'container_class'      => 'header-nav'
+                        'menu_class'      => 'header-nav'
                     ]); ?>
                     <!-- /.header-nav -->
                 </div>
